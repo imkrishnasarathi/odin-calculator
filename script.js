@@ -23,3 +23,18 @@ function divide(n1, n2){
 const n1 = 0;
 const operator = 0;
 const n2 = 0;
+
+function operate(n1, operator, n2){
+  if (operator===0){
+    add(n1, n2);
+  }
+  else if (operator === 1){
+    subtract(n1, n2);
+  }
+  else if (operator === 2){
+    multiply(n1,n2);
+  }
+  else{
+    divide(n1, n2)
+  }
+}
