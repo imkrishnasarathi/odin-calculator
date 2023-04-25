@@ -19,3 +19,7 @@ function multiply(...n) {
 function divide(n1, n2){
     return n1/n2;
 }
+
+const n1 = 0;
+const operator = 0;
+const n2 = 0;
