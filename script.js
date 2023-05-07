@@ -6,6 +6,33 @@ const equal = document.querySelector('#equal');
 let operator = null;
 let n1 = null;
 let shouldResetDisplay = false;
+let periodEntered = false;
+let dot = document.querySelector('#dot');
+
+dot.addEventListener('click', (e)=>{
+  e.preventDefault();
+  if(periodEntered!==true){
+    if (shouldResetDisplay){
+      displayVal = `0${e.target.textContent}`;
+      periodEntered = true;
+      shouldResetDisplay = false;
+    }
+    else{
+      if(displayVal === '0'){
+        periodEntered = true;
+        displayVal = e.target.textContent;
+      }
+      else{
+        periodEntered = true;
+        displayVal+=e.target.textContent;
+      }
+    }
+  }
+  else{
+    return;
+  }
+  display.textContent = displayVal;
+})
 
 function clearCalculator() {
   displayVal = '0';
@@ -14,6 +41,7 @@ function clearCalculator() {
   n1 = null;
   n2 = null;
   shouldResetDisplay = false;
+  periodEntered = false;
 }
 
 function add(n1, n2) {
@@ -54,6 +82,7 @@ numberButtons.forEach(btn => {
 
 symbols.forEach(symbol => {
   symbol.addEventListener('click', function(e){
+    periodEntered = false;
     if (operator !== null && !shouldResetDisplay) {
       calculate();
     }
@@ -67,6 +96,11 @@ symbols.forEach(symbol => {
     }
   });
 });
+
+let countDecimals = function (value) {
+  if(Math.floor(value) === value) return 0;
+  return value.toString().split(".")[1].length || 0;
+}
 
 function calculate(){
   if (operator===null || n1 === null){
@@ -89,7 +123,17 @@ function calculate(){
       result = operate(n1,3,n2)
       break
   }
-  displayVal = result.toString();
+  if ((result % 1) !==0){
+    if (countDecimals(parseFloat(result)) > 7){
+      result = parseFloat(result).toFixed(7);
+    } else{
+      result = parseFloat(result).toFixed(countDecimals(parseFloat(result)));
+    }
+  }
+  if (result === 'Infinity' || result === Infinity){
+    result = 'Cannot divide by 0';
+  }
+  displayVal = parseFloat(result).toString();
   display.textContent = displayVal;
   n1 = result;
   shouldResetDisplay = true;
@@ -97,7 +141,9 @@ function calculate(){
 }
 
 equal.addEventListener('click', function(){
-  calculate();
+  if(operator!== null && !shouldResetDisplay){
+    calculate();
+  }
   operator = null;
 })
 
