@@ -12,6 +12,7 @@ function clearCalculator() {
   display.textContent = displayVal;
   operator = null;
   n1 = null;
+  n2 = null;
   shouldResetDisplay = false;
 }
 
