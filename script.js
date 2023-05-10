@@ -8,11 +8,18 @@ let n1 = null;
 let shouldResetDisplay = false;
 let periodEntered = false;
 let dot = document.querySelector('#dot');
+let inverse = document.querySelector('#inverse')
+
+inverse.addEventListener('click', (e)=>{
+  e.preventDefault();
+  displayVal = parseFloat(displayVal) - (parseFloat(displayVal) * 2)
+  display.textContent = displayVal;
+})
 
 dot.addEventListener('click', (e)=>{
   e.preventDefault();
   if(periodEntered!==true){
-    if (shouldResetDisplay){
+    if (shouldResetDisplay || displayVal==='0'){
       displayVal = `0${e.target.textContent}`;
       periodEntered = true;
       shouldResetDisplay = false;
