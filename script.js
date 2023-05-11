@@ -121,7 +121,8 @@ function calculate(){
 
 inverse.addEventListener('click', (e)=>{
   e.preventDefault();
-  displayVal = parseFloat(displayVal) - (parseFloat(displayVal) * 2)
+  inverseVal = parseFloat(displayVal) - (parseFloat(displayVal) * 2);
+  displayVal = inverseVal.toString();
   display.textContent = displayVal;
 })
 
