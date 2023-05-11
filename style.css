@@ -32,7 +32,7 @@ body {
 .wrapper {
 	min-height: 48em;
 	width: 100%;
-	background-color: rgb(59, 59, 59);
+	background-color: rgb(42, 42, 42);
 	gap: 2em;
 	padding: 2em;
 	display: flex;
@@ -84,17 +84,21 @@ button {
 	line-height: 1;
 	cursor: pointer;
 	color: #fff;
-	background-color: #0571298d;
+	background-color: #6060608d;
 	border: none;
-	box-shadow: 0 5px #606060;
+	box-shadow: 0 5px #656565;
 	width: 100%;
     max-width: 100%;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 }
 
+button.operator {
+	background-color: #909090;
+}
+
 button[id="clear"] {
-	background-color: rgb(130, 82, 82);
+	background-color: rgb(120, 63, 63);
 }
 
 button:active {
@@ -109,14 +113,19 @@ button:active {
 	cursor: pointer;
 	outline: none;
 	color: #fff;
-	background-color: #0571298d;
+	background-color: #6060608d;
 	border: none;
-	box-shadow: 0 5px #606060;
+	box-shadow: 0 5px #656565;
 	width: 100%;
 	grid-column: span 2;
 	padding: 0.4em 0.2em;
 	border-radius: 3em;
 	aspect-ratio: 2/1;
+}
+
+#zero:active{
+	box-shadow: 0 0px #494949;
+	transform: translateY(4px);
 }
 
 @media (max-width: 500px) {

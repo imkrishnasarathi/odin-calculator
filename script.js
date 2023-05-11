@@ -73,6 +73,11 @@ symbols.forEach(symbol => {
       n1 = parseFloat(displayVal);
       shouldResetDisplay = true;
     }
+
+    symbols.forEach(btn => {
+      btn.classList.remove('operator');
+    });
+    e.target.classList.add('operator');
   });
 });
 
@@ -117,6 +122,10 @@ function calculate(){
   n1 = result;
   shouldResetDisplay = true;
 
+  // Remove the 'operator' class from all operator buttons
+  symbols.forEach(btn => {
+    btn.classList.remove('operator');
+  });
 }
 
 inverse.addEventListener('click', (e)=>{
