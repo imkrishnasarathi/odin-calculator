@@ -99,6 +99,8 @@ button.operator {
 
 button[id="clear"] {
 	background-color: rgb(120, 63, 63);
+	grid-column: span 2;
+	border-radius: 2rem 2rem 2rem 2rem;
 }
 
 button:active {
@@ -122,10 +124,19 @@ button:active {
 	border-radius: 3em;
 	aspect-ratio: 2/1;
 }
+#inverse{
+	grid-column: span 2;
+	border-radius: 2rem 2rem 2rem 2rem;
+}
 
 #zero:active{
 	box-shadow: 0 0px #494949;
 	transform: translateY(4px);
+}
+
+#backspace{
+	grid-column: span 2;
+	border-radius: 2rem 2rem 2rem 2rem;
 }
 
 @media (max-width: 500px) {
