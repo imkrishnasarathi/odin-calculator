@@ -1,2 +1,2 @@
 # odin-calculator
-My TheOdinProject solution for calculator
+**This repo hosts my solution for TheOdinProject exercise - Calculator**
