@@ -1,6 +1,8 @@
 # odin-calculator
 **This repo hosts my solution for TheOdinProject exercise - Calculator**
-<ul>Languages:
+
+**Languages:**
+<ul>
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
