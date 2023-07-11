@@ -4,6 +4,6 @@
 **Languages:**
 <ul>
   <li>HTML</li>
-  <li>CSS</li>
+  <li>Plain CSS</li>
   <li>Vanilla JavaScript</li>
 </ul>
