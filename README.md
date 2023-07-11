@@ -7,3 +7,5 @@
   <li>Plain CSS</li>
   <li>Vanilla JavaScript</li>
 </ul>
+
+**Note**
