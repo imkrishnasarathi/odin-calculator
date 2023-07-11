@@ -8,4 +8,4 @@
   <li>Vanilla JavaScript</li>
 </ul>
 
-**Note:**No libraries used
+**Note:**No libraries used.
